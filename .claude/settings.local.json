@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"c:/Users/LENOVO/Desktop/UCB/I-2026/Proyecto Final/Claude Code/sedem/agencia-distribuidora-sedem\" status --short)",
+      "Bash(git -C \"c:/Users/LENOVO/Desktop/UCB/I-2026/Proyecto Final/Claude Code/sedem/agencia-distribuidora-sedem\" log --oneline -5)",
+      "Bash(node -e \"const f=require\\('fs'\\).readFileSync\\('.env.local','utf8'\\); console.log\\(f.split\\('\\\\n'\\).map\\(l=>l.split\\('='\\)[0]\\).join\\(', '\\)\\); console.log\\('URL set:', /SUPABASE_URL=https:\\\\/\\\\/[a-z0-9]+\\\\.supabase/.test\\(f\\)\\); console.log\\('KEY length ok:', \\(f.match\\(/ANON_KEY=\\(.+\\)/\\)||['','']\\)[1].trim\\(\\).length>20\\)\")"
+    ]
+  }
+}
