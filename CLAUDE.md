@@ -23,81 +23,70 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=<key>
 
 ## Esquema de Base de Datos
 
-### Tabla: `agencia_almacenes`
+### 
 ```sql
-CREATE TABLE agencia_almacenes (
-  almacen_id    INTEGER,
-  nombre        TEXT,
-  municipio     TEXT,
-  departamento  TEXT,
-  direccion     TEXT,
-  capacidad_m3  INTEGER,
-  estado        TEXT
+CREATE TABLE IF NOT EXISTS agencia_almacenes (
+   almacen_id       INTEGER,
+   nombre           TEXT,
+   municipio        TEXT,
+   departamento     TEXT,
+   direccion        TEXT,
+   capacidad_m3     INTEGER,
+   estado           TEXT
 );
-```
+ 
+CREATE TABLE IF NOT EXISTS agencia_transportistas (
+   transportista_id INTEGER,
+   razon_social     TEXT,
+   nit              TEXT,
+   municipio        TEXT,
+   contacto         TEXT,
+   telefono         TEXT,
+   estado           TEXT
+);
+ 
+CREATE TABLE IF NOT EXISTS agencia_vehiculos (
+   vehiculo_id      INTEGER,
+   transportista_id INTEGER,
+   descripcion      TEXT,
+   placa            TEXT,
+   tipo             TEXT,
+   capacidad_kg     INTEGER,
+   estado           TEXT
+);
+ 
+CREATE TABLE IF NOT EXISTS agencia_recepciones (
+   recepcion_id        INTEGER,
+   nro_lote            TEXT,
+   almacen_id          INTEGER,
+   transportista_id    INTEGER,
+   vehiculo_id         INTEGER,
+   fecha_recepcion     TEXT,
+   cantidad_recibida   NUMERIC,
+   unidad              TEXT,
+   condicion           TEXT,
+   estado              TEXT,
+   responsable         TEXT,
+   nro_guia_remision   TEXT,
+   temperatura_llegada NUMERIC
+);
+ 
+CREATE TABLE IF NOT EXISTS agencia_despachos (
+   despacho_id          INTEGER,
+   recepcion_id         INTEGER,
+   nro_lote             TEXT,
+   almacen_id           INTEGER,
+   transportista_id     INTEGER,
+   vehiculo_id          INTEGER,
+   fecha_despacho       TEXT,
+   cantidad_despachada  NUMERIC,
+   centro_destino       TEXT,
+   estado               TEXT,
+   responsable          TEXT,
+   nro_guia_despacho    TEXT,
+   fecha_llegada        TEXT
+);
 
-### Tabla: `agencia_transportistas`
-```sql
-CREATE TABLE agencia_transportistas (
-  transportista_id INTEGER,
-  razon_social     TEXT,
-  nit              TEXT,
-  municipio        TEXT,
-  contacto         TEXT,
-  telefono         TEXT,
-  estado           TEXT
-);
-```
-
-### Tabla: `agencia_vehiculos`
-```sql
-CREATE TABLE agencia_vehiculos (
-  vehiculo_id      INTEGER,
-  transportista_id INTEGER,
-  descripcion      TEXT,
-  placa            TEXT,
-  tipo             TEXT,
-  capacidad_kg     INTEGER,
-  estado           TEXT
-);
-```
-
-### Tabla: `agencia_recepciones`
-```sql
-CREATE TABLE agencia_recepciones (
-  recepcion_id        INTEGER,
-  nro_lote            TEXT,
-  almacen_id          INTEGER,
-  transportista_id    INTEGER,
-  vehiculo_id         INTEGER,
-  fecha_recepcion     TEXT,
-  cantidad_recibida   NUMERIC,
-  unidad              TEXT,
-  condicion           TEXT,
-  estado              TEXT,
-  responsable         TEXT,
-  nro_guia_remision   TEXT,
-  temperatura_llegada NUMERIC
-);
-```
-
-### Tabla: `agencia_despachos`
-```sql
-CREATE TABLE agencia_despachos (
-  despacho_id         INTEGER,
-  recepcion_id        INTEGER,
-  nro_lote            TEXT,
-  almacen_id          INTEGER,
-  transportista_id    INTEGER,
-  vehiculo_id         INTEGER,
-  fecha_despacho      TEXT,
-  cantidad_despachada NUMERIC,
-  centro_destino      TEXT,
-  estado              TEXT,
-  responsable         TEXT,
-  nro_guia_despacho   TEXT,
-  fecha_llegada       TEXT
-);
 ```
 
 > **Notas de diseño:**

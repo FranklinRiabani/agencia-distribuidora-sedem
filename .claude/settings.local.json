@@ -3,7 +3,9 @@
     "allow": [
       "Bash(git -C \"c:/Users/LENOVO/Desktop/UCB/I-2026/Proyecto Final/Claude Code/sedem/agencia-distribuidora-sedem\" status --short)",
       "Bash(git -C \"c:/Users/LENOVO/Desktop/UCB/I-2026/Proyecto Final/Claude Code/sedem/agencia-distribuidora-sedem\" log --oneline -5)",
-      "Bash(node -e \"const f=require\\('fs'\\).readFileSync\\('.env.local','utf8'\\); console.log\\(f.split\\('\\\\n'\\).map\\(l=>l.split\\('='\\)[0]\\).join\\(', '\\)\\); console.log\\('URL set:', /SUPABASE_URL=https:\\\\/\\\\/[a-z0-9]+\\\\.supabase/.test\\(f\\)\\); console.log\\('KEY length ok:', \\(f.match\\(/ANON_KEY=\\(.+\\)/\\)||['','']\\)[1].trim\\(\\).length>20\\)\")"
+      "Bash(node -e \"const f=require\\('fs'\\).readFileSync\\('.env.local','utf8'\\); console.log\\(f.split\\('\\\\n'\\).map\\(l=>l.split\\('='\\)[0]\\).join\\(', '\\)\\); console.log\\('URL set:', /SUPABASE_URL=https:\\\\/\\\\/[a-z0-9]+\\\\.supabase/.test\\(f\\)\\); console.log\\('KEY length ok:', \\(f.match\\(/ANON_KEY=\\(.+\\)/\\)||['','']\\)[1].trim\\(\\).length>20\\)\")",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" \"https://ifkmepffdlgmtbmxwryu.supabase.co/rest/v1/agencia_almacenes?select=almacen_id&limit=1\" -H \"apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlma21lcGZmZGxnbXRibXh3cnl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg5ODA0NzIsImV4cCI6MjA5NDU1NjQ3Mn0.HQmv5GdokVrBGfuG3qq2NX0o4HKMeDVayu6qjQq55Vs\")",
+      "Bash(curl -s \"https://ifkmepffdlgmtbmxwryu.supabase.co/rest/v1/agencia_almacenes?select=almacen_id,nombre&limit=2\" -H \"apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlma21lcGZmZGxnbXRibXh3cnl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg5ODA0NzIsImV4cCI6MjA5NDU1NjQ3Mn0.HQmv5GdokVrBGfuG3qq2NX0o4HKMeDVayu6qjQq55Vs\")"
     ]
   }
 }
